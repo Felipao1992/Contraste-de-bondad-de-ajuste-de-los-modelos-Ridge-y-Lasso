@@ -1,6 +1,6 @@
 # Contraste de Bondad de Ajuste de los Modelos Ridge y Lasso
 
-Este repositorio contiene el código en **R** utilizado para el desarrollo de la tesis de grado titulada **"Contraste de bondad de ajuste de los modelos Ridge y Lasso"**, presentada en la Carrera de Ingeniería Matemática de la Universidad Central del Ecuador (UCE).
+Este repositorio contiene el código en **R** y los conjuntos de datos utilizados para el desarrollo de la tesis de grado titulada **"Contraste de bondad de ajuste de los modelos Ridge y Lasso"**, presentada en la Carrera de Ingeniería Matemática de la Universidad Central del Ecuador (UCE).
 
 ## 👤 Autor
 * **Felipe Augusto Pucha Vargas**
@@ -9,12 +9,16 @@ Este repositorio contiene el código en **R** utilizado para el desarrollo de la
 
 ## 📂 Estructura del Repositorio
 
-El repositorio cuenta con los siguientes archivos:
+Todos los archivos se encuentran en la raíz del proyecto y están divididos de la siguiente manera:
 
-* `Bondad de ajuste Ridge y Lasso`: Script principal que realiza el análisis comparativo entre Ridge y Lasso (análisis exploratorio, validación cruzada, diagnóstico de supuestos, métricas y Bootstrap).
-* `Modelo extendido`: Script correspondiente a la sección de "Trabajos Futuros". Implementa un modelo con variables de interacción, transformación Box-Cox y normalización.
-* `BaseModelo_estandarizada.csv`: Conjunto de datos base utilizado para el análisis principal.
-* `README.md`: Este archivo de instrucciones.
+**Scripts de R:**
+* `Bondad_de_ajuste_Ridge_y_Lasso.R`: Script principal. Realiza el análisis exploratorio, la validación cruzada para la selección de \(\lambda\), la evaluación de supuestos del modelo clásico (OLS), el cálculo de métricas predictivas y la estabilidad mediante Bootstrap.
+* `Modelo_extendido.R`: Script correspondiente a la sección de "Trabajos Futuros". Implementa un modelo con variables de interacción, aplicando previamente una transformación Box-Cox y normalización Z-score.
+
+**Bases de Datos:**
+* `BaseModelo_estandarizada.csv`: Conjunto de datos principal utilizado para los modelos Ridge y Lasso.
+* `BaseModelo_preprocessed.csv`: Conjunto de datos simplificado para el diagnóstico de supuestos del modelo OLS.
+* `BaseExtendida.xlsx`: Base de datos que incluye la variable de satélite y las interacciones para el modelo extendido.
 
 ## 🛠️ Requisitos e Instalación
 
