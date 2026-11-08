@@ -9,11 +9,12 @@ Este repositorio contiene el código en **R** utilizado para el desarrollo de la
 
 ## 📂 Estructura del Repositorio
 
-El código está dividido en dos scripts principales para facilitar su lectura y ejecución:
+El repositorio cuenta con los siguientes archivos:
 
-* `01_Analisis_Principal.R`: Script principal que realiza el análisis comparativo entre Ridge y Lasso. Incluye análisis exploratorio, validación cruzada, diagnóstico de supuestos (OLS), evaluación de métricas (RMSE, MAE, AIC, BIC), selección clásica de variables (Forward/Backward) y evaluación de estabilidad mediante Bootstrap.
-* `02_Modelo_Extendido.R`: Script correspondiente a la sección de "Trabajos Futuros". Implementa un modelo extendido con variables de interacción, aplicando previamente una transformación Box-Cox y normalización Z-score.
-* `data/`: Carpeta que contiene los conjuntos de datos (archivos `.csv` y `.xlsx`) necesarios para ejecutar los scripts.
+* `Bondad de ajuste Ridge y Lasso`: Script principal que realiza el análisis comparativo entre Ridge y Lasso (análisis exploratorio, validación cruzada, diagnóstico de supuestos, métricas y Bootstrap).
+* `Modelo extendido`: Script correspondiente a la sección de "Trabajos Futuros". Implementa un modelo con variables de interacción, transformación Box-Cox y normalización.
+* `BaseModelo_estandarizada.csv`: Conjunto de datos base utilizado para el análisis principal.
+* `README.md`: Este archivo de instrucciones.
 
 ## 🛠️ Requisitos e Instalación
 
