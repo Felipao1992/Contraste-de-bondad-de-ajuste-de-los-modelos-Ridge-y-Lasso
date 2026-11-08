@@ -21,7 +21,8 @@ library(corrplot)  # Para visualizar la matriz de correlación
 # ------------------------------------------------------------------------------
 # Bloque 2: Carga de Datos y Preparación de la Matriz de Variables
 # ------------------------------------------------------------------------------
-ruta_csv <- "C:/Users/felip/Desktop/Tesis/Metodologia/Base de datos/BaseModelo_estandarizada.csv"
+# NOTA PARA GITHUB: Asegúrate de tener la carpeta "data/" con los archivos CSV
+ruta_csv <- "data/BaseModelo_estandarizada.csv"
 datos <- read.csv(ruta_csv, sep = ",", header = TRUE)
 
 # Seleccionar la variable dependiente y las variables predictoras
@@ -99,7 +100,8 @@ print(coef_lasso_opt)
 # ------------------------------------------------------------------------------
 # Bloque 7: Evaluación de Supuestos del Modelo Clásico (OLS)
 # ------------------------------------------------------------------------------
-file_path <- "C:/Users/felip/Desktop/Tesis/Secciones/Contraste de Bondad de Ajuste/Base de datos simplificada/BaseModelo_preprocessed.csv"
+# NOTA PARA GITHUB: Ruta relativa para el segundo archivo
+file_path <- "data/BaseModelo_preprocessed.csv"
 df <- read.csv(file_path)
 modelo <- lm(NO2Suelo ~ ., data = df)
 summary(modelo)
@@ -170,7 +172,8 @@ RSS_ridge <- sum((y_train - pred_ridge_train)^2)
 n_train <- length(y_train)
 p <- ncol(X_train)
 I_p <- diag(p)
-inv_ridge <- solve(t(X_train) %*% X_train + lambda_ridge_opt * I_p)
+# Optimización: Usar qr.solve() es numéricamente más estable que solve()
+inv_ridge <- qr.solve(t(X_train) %*% X_train + lambda_ridge_opt * I_p)
 Hat_ridge <- X_train %*% inv_ridge %*% t(X_train)
 df_ridge <- sum(diag(Hat_ridge))
 sigma2_ridge <- RSS_ridge / n_train
@@ -283,7 +286,7 @@ print(coef_lasso_lm)
 # Bloque 10: Evaluación de Estabilidad mediante Bootstrap y Comparación de Selección
 # ------------------------------------------------------------------------------
 set.seed(123)  # Para reproducibilidad
-R <- 100  # Número de replicaciones bootstrap
+R <- 100  # Número de replicaciones bootstrap (Nota: Puede tardar mucho tiempo)
 forward_sel_list <- list()
 backward_sel_list <- list()
 lasso_sel_list <- list()
